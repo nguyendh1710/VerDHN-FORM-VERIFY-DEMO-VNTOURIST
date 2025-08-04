@@ -1,0 +1,592 @@
+import * as React from 'react';
+
+type NguoiDiCung = {
+  ten: string;
+  doiTuong: string;
+  soGhe: string;
+};
+
+type Props = {
+  data: {
+    tenNguoiDat: string;
+    email: string;
+    soDienThoai: string;
+    soCCCD: string;
+    tenTour: string;
+    ngayDi: string;
+    ngayVe: string;
+    maDonHang: string;
+    nguoiDiCung: NguoiDiCung[];
+  };
+};
+
+export default function VerifyEmail({ data }: Props) {
+  return (
+    <div className="flex flex-col items-start p-0 mx-auto my-0 h-auto bg-white w-[600px]">
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/3e36a2f500287a1bbaf7984065b786304f352a38?width=1200"
+        alt="Frame 427320659"
+        className="relative h-[131px] w-[600px]"
+      />
+      <div className="flex relative flex-col gap-5 items-start self-stretch px-6 py-10 max-w-[600px]">
+        <div className="flex relative flex-col gap-1.5 items-start self-stretch p-0 rounded-xl">
+          <div className="relative self-stretch text-sm font-semibold leading-5 text-indigo-600">
+            <div className="text-sm text-neutral-800">
+              Chúng tôi xin trân trọng cảm ơn Qúy khách hàng
+            </div>
+            <div className="text-sm font-bold text-indigo-600">{data.tenNguoiDat}</div>
+            <div className="text-sm text-neutral-800">đã đặt tour du lịch tại Vietnam Tourist.</div>
+          </div>
+          <div className="relative self-stretch text-sm font-semibold leading-5 text-indigo-600">
+            <div className="text-sm text-neutral-800">Đơn hàng</div>
+            <div className="text-sm font-bold text-indigo-600">MD01234</div>
+            <span className="text-sm text-indigo-600" />
+            <div className="text-sm text-neutral-800">
+              của Qúy khách đã được ghi nhận thành công ngày 01/06/2025, với thông tin như sau:
+            </div>
+          </div>
+        </div>
+        <div className="flex relative flex-col gap-1.5 items-start self-stretch">
+          <div className="relative self-stretch text-2xl font-bold leading-8 text-center text-indigo-900">
+            <div className="text-2xl font-bold text-indigo-900 max-sm:text-xl">
+              XÁC NHẬN ĐƠN HÀNG
+            </div>
+          </div>
+        </div>
+        <div className="flex relative gap-4 items-start self-stretch p-0">
+          <div className="flex relative flex-col gap-2 items-start flex-[1_0_0]">
+            <div className="flex relative gap-1 items-center self-stretch">
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Tên tour:</div>
+              </div>
+              <div className="relative text-sm font-semibold leading-5 text-neutral-800">
+                <div className="text-sm font-bold text-neutral-800">{data.tenTour}</div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center self-stretch">
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Ngày đi:</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800"> {data.ngayDi}</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">-</div>
+              </div>
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Ngày về:</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800"> {data.ngayVe}</div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center self-stretch">
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Điểm đón:</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800"> {data.tenTour}</div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center self-stretch">
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Mã đơn hàng:</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-indigo-600">
+                <div className="text-sm text-indigo-600">{data.maDonHang}</div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center self-stretch">
+              <div className="relative text-sm leading-5 text-neutral-800">
+                <div className="text-sm text-neutral-800">Trạng thái đơn hàng:</div>
+              </div>
+              <div className="relative text-sm font-medium leading-5 text-red-700">
+                <div className="text-sm text-red-700">Chưa thanh toán</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex relative flex-col items-start self-stretch p-0 bg-white rounded-xl border-2 border-indigo-800 border-solid">
+          <div className="flex relative flex-col justify-center items-center self-stretch px-0 py-3 bg-indigo-800 max-sm:p-2">
+            <div className="relative text-base font-bold leading-6 text-white">
+              <div className="text-base font-bold text-white">CHI TIẾT ĐƠN HÀNG</div>
+            </div>
+          </div>
+          <div className="flex relative flex-col gap-4 items-start self-stretch p-3 max-sm:p-2">
+            <div className="flex relative flex-col gap-1.5 items-start self-stretch">
+              <div className="flex relative gap-1 items-center self-stretch">
+                <div className="relative text-sm leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">Người đặt:</div>
+                </div>
+                <div className="relative text-sm font-medium leading-5 text-indigo-600">
+                  <div className="text-sm text-indigo-600">{data.tenNguoiDat}</div>
+                </div>
+              </div>
+              <div className="flex relative gap-1 items-center self-stretch">
+                <div className="relative text-sm leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">Số điện thoại:</div>
+                </div>
+                <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">{data.soDienThoai}</div>
+                </div>
+              </div>
+              <div className="flex relative gap-1 items-center self-stretch">
+                <div className="relative text-sm leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">Email:</div>
+                </div>
+                <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">{data.email}</div>
+                </div>
+              </div>
+              <div className="flex relative gap-1 items-center self-stretch">
+                <div className="relative text-sm leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">Số CMND/CCCD:</div>
+                </div>
+                <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                  <div className="text-sm text-neutral-800">{data.soCCCD}</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex relative flex-col gap-2 items-start self-stretch">
+              <div className="flex relative flex-col gap-1.5 justify-center items-start p-0">
+                <div className="relative text-sm font-semibold leading-5 text-indigo-600">
+                  <div className="text-sm font-bold text-indigo-600">Chi tiết dịch vụ</div>
+                </div>
+              </div>
+              <div className="flex relative flex-col gap-2 items-start self-stretch">
+                <div className="flex relative gap-1 items-center self-stretch">
+                  <div className="relative text-sm leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">Khách sạn:</div>
+                  </div>
+                  <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">Khách sạn 3 sao</div>
+                  </div>
+                </div>
+                <div className="flex relative gap-1 items-center self-stretch">
+                  <div className="relative text-sm leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">Loại phòng:</div>
+                  </div>
+                  <div className="flex relative items-center">
+                    <div className="flex relative gap-1 items-start">
+                      <div className="flex relative gap-0.5 items-center">
+                        <div className="flex relative gap-1 items-center">
+                          <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                            <div className="text-sm text-neutral-800">Phòng Twin-</div>
+                          </div>
+                        </div>
+                        <div className="flex relative gap-1 items-center p-0">
+                          <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                            <div className="text-sm text-neutral-800">SL:2</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex relative gap-2.5 justify-center items-center px-1.5 py-1">
+                      <div className="relative w-px bg-neutral-800 h-[15px]" />
+                    </div>
+                    <div className="flex relative gap-1 items-start">
+                      <div className="flex relative gap-0.5 items-center">
+                        <div className="flex relative gap-1 items-center">
+                          <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                            <div className="text-sm text-neutral-800">Phòng Single-</div>
+                          </div>
+                        </div>
+                        <div className="flex relative gap-1 items-center p-0">
+                          <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                            <div className="text-sm text-neutral-800">SL:1</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex relative gap-1 items-center self-stretch">
+                  <div className="relative text-sm leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">VAT:</div>
+                  </div>
+                  <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">10%</div>
+                  </div>
+                  <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">-</div>
+                  </div>
+                  <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                    <div className="text-sm text-neutral-800">Đã bao gồm VAT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* thong tin nguoi di cung */}
+            {data.nguoiDiCung?.length > 0 && (
+              <div className="mt-6">
+                <h2 className="font-semibold text-base mb-2">🧑‍🤝‍🧑 Thông tin người đi cùng:</h2>
+                <table className="w-full border-collapse border border-gray-300 text-xs">
+                  <thead className="bg-gray-300 text-neutral-800 font-bold">
+                    <tr>
+                      <th className="border border-gray-300 px-3 py-2 text-left">Họ tên</th>
+                      <th className="border border-gray-300 px-3 py-2 text-left">Đối tượng</th>
+                      <th className="border border-gray-300 px-3 py-2 text-left">Đơn giá</th>
+                      <th className="border border-gray-300 px-3 py-2 text-left">Số ghế</th>
+                      <th className="border border-gray-300 px-3 py-2 text-left">Thành tiền</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-slate-900">
+                    {data.nguoiDiCung.map((nguoi, index) => {
+                      const donGia = nguoi.doiTuong === 'Tre em' ? 500000 : 2000000;
+                      return (
+                        <tr key={index}>
+                          <td className="border border-gray-300 px-3 py-2">{nguoi.ten}</td>
+                          <td className="border border-gray-300 px-3 py-2">{nguoi.doiTuong}</td>
+                          <td className="border border-gray-300 px-3 py-2">
+                            {donGia.toLocaleString()} VND
+                          </td>
+                          <td className="border border-gray-300 px-3 py-2">{nguoi.soGhe || '-'}</td>
+                          <td className="border border-gray-300 px-3 py-2">
+                            {donGia.toLocaleString()} VND
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <div className="flex relative flex-col gap-2 items-start self-stretch">
+              <div className="flex relative flex-col gap-1.5 justify-center items-start p-0">
+                <div className="relative text-sm font-semibold leading-5 text-indigo-600">
+                  <div className="text-sm font-bold text-indigo-600">Chi tiết phụ thu</div>
+                </div>
+              </div>
+              <div className="flex relative flex-col gap-2 items-start self-stretch">
+                <div className="flex relative flex-col gap-1.5 items-start self-stretch">
+                  <div className="flex relative gap-1 items-center self-stretch">
+                    <div className="relative text-sm leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">Khách sạn:</div>
+                    </div>
+                    <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">Khách sạn 3 sao</div>
+                    </div>
+                  </div>
+                  <div className="flex relative gap-1 items-center self-stretch">
+                    <div className="relative text-sm leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">Loại phòng:</div>
+                    </div>
+                    <div className="flex relative items-center">
+                      <div className="flex relative gap-1 items-start">
+                        <div className="flex relative gap-0.5 items-center">
+                          <div className="flex relative gap-1 items-center">
+                            <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                              <div className="text-sm text-neutral-800">Phòng Twin-</div>
+                            </div>
+                          </div>
+                          <div className="flex relative gap-1 items-center p-0">
+                            <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                              <div className="text-sm text-neutral-800">SL:2</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex relative gap-2.5 justify-center items-center px-1.5 py-1">
+                        <div className="relative w-px bg-neutral-800 h-[15px]" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex relative gap-1 items-center self-stretch">
+                    <div className="relative text-sm leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">VAT:</div>
+                    </div>
+                    <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">10%</div>
+                    </div>
+                    <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">-</div>
+                    </div>
+                    <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                      <div className="text-sm text-neutral-800">Đã bao gồm VAT</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex relative flex-col items-start self-stretch">
+                <div className="flex relative gap-1.5 items-start self-stretch p-3 bg-gray-300 max-sm:gap-1 max-sm:p-2">
+                  <div className="flex relative flex-col gap-2 items-start flex-[1_0_0] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                    <div className="relative self-stretch text-xs font-semibold leading-5 text-neutral-800 max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                      <div className="text-xs font-bold text-neutral-800">Loại phòng phụ thu</div>
+                    </div>
+                  </div>
+                  <div className="flex relative flex-col gap-2 items-start w-[110px] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                    <div className="relative self-stretch text-xs font-semibold leading-5 text-neutral-800 max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                      <div className="text-xs font-bold text-neutral-800">Đơn giá</div>
+                    </div>
+                  </div>
+                  <div className="flex relative flex-col gap-2 items-start w-[60px] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                    <div className="relative self-stretch text-xs font-semibold leading-5 text-neutral-800 max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                      <div className="text-xs font-bold text-neutral-800">Số lượng</div>
+                    </div>
+                  </div>
+                  <div className="flex relative flex-wrap gap-2 content-start items-start w-[50px] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                    <div className="relative shrink-0 text-xs font-semibold leading-5 text-neutral-800 w-[60px] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                      <div className="text-xs font-bold text-neutral-800">Đơn vị</div>
+                    </div>
+                  </div>
+                  <div className="flex relative flex-col gap-2 items-start w-[110px] max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                    <div className="relative self-stretch text-xs font-semibold leading-5 text-neutral-800 max-sm:flex-1 max-sm:w-auto max-sm:min-w-0">
+                      <div className="text-xs font-bold text-neutral-800">Thành tiền</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex relative flex-col gap-6 items-start self-stretch px-3 py-5 border-b border-solid border-b-gray-300">
+                  <div className="flex relative flex-col gap-6 items-start self-stretch max-sm:px-0 max-sm:py-4">
+                    <div className="flex relative flex-col gap-2 items-start self-stretch max-sm:px-0 max-sm:py-4">
+                      <div className="flex relative gap-1.5 items-start self-stretch p-0 max-sm:gap-1 max-sm:px-0 max-sm:py-4">
+                        <div className="flex relative flex-col gap-2 items-start flex-[1_0_0] max-sm:flex-1 max-sm:gap-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                          <div className="flex relative gap-2 items-center self-stretch max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                            <div className="relative text-xs font-bold leading-5 flex-[1_0_0] text-slate-900 max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                              <div className="text-xs font-bold text-slate-900">Phòng Twin</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex relative flex-col gap-2 items-start w-[110px] max-sm:flex-1 max-sm:gap-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                          <div className="flex relative gap-2 items-center self-stretch max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                            <div className="relative text-xs font-medium leading-5 flex-[1_0_0] text-slate-900 max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                              <div className="text-xs text-slate-900">500.000VND</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex relative flex-col gap-2 justify-center items-start w-[60px] max-sm:flex-1 max-sm:gap-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                          <div className="flex relative gap-2 items-center self-stretch max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                            <div className="relative text-xs font-medium leading-5 flex-[1_0_0] text-slate-900 max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                              <div className="text-xs text-slate-900">1</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex relative flex-col gap-2 items-start w-[50px] max-sm:flex-1 max-sm:gap-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                          <div className="flex relative gap-2 items-center self-stretch max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                            <div className="relative text-xs font-medium leading-5 flex-[1_0_0] text-slate-900 max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                              <div className="text-xs text-slate-900">Phòng</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex relative flex-col gap-2 items-start w-[110px] max-sm:flex-1 max-sm:gap-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                          <div className="flex relative gap-2 items-center self-stretch max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                            <div className="relative text-xs font-medium leading-5 flex-[1_0_0] text-slate-900 max-sm:flex-1 max-sm:px-0 max-sm:py-4 max-sm:w-auto max-sm:min-w-0">
+                              <div className="text-xs text-slate-900">500.000VND</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex relative flex-col gap-4 items-start self-stretch">
+              <div className="flex relative flex-col gap-1.5 justify-center items-start p-0">
+                <div className="relative text-sm font-semibold leading-5 text-indigo-600">
+                  <div className="text-sm font-bold text-indigo-600">Tổng tiền tạm tính</div>
+                </div>
+              </div>
+              <div className="flex relative flex-col items-start self-stretch">
+                <div className="flex relative flex-col gap-2 items-start self-stretch pb-3 border-b border-solid border-b-gray-300">
+                  <div className="flex relative items-center self-stretch">
+                    <div className="relative text-sm font-medium leading-5 flex-[1_0_0] text-neutral-800">
+                      <div className="text-sm text-neutral-800">Tổng tiền tạm tính</div>
+                    </div>
+                    <div className="flex relative gap-1 items-center">
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">4.500.000</div>
+                      </div>
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">VNĐ</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex relative items-center self-stretch">
+                    <div className="relative text-sm font-medium leading-5 flex-[1_0_0] text-neutral-800">
+                      <div className="text-sm text-neutral-800">Tổng tiền phụ thu</div>
+                    </div>
+                    <div className="flex relative gap-1 items-center">
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">500.000</div>
+                      </div>
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">VNĐ</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex relative items-center self-stretch">
+                    <div className="relative text-sm font-medium leading-5 flex-[1_0_0] text-neutral-800">
+                      <div className="text-sm text-neutral-800">Chiết khấu (giảm giá)</div>
+                    </div>
+                    <div className="flex relative gap-1 items-center">
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">0</div>
+                      </div>
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">VNĐ</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex relative items-center self-stretch">
+                    <div className="relative text-sm font-medium leading-5 flex-[1_0_0] text-neutral-800">
+                      <div className="text-sm text-neutral-800">Đã thanh toán</div>
+                    </div>
+                    <div className="flex relative gap-1 items-center">
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">0</div>
+                      </div>
+                      <div className="relative text-sm font-medium leading-5 text-neutral-800">
+                        <div className="text-sm text-neutral-800">VNĐ</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex relative items-center self-stretch px-0 py-2.5">
+                  <div className="relative text-sm font-semibold leading-5 text-orange-500 flex-[1_0_0]">
+                    <div className="text-sm font-bold text-orange-500">
+                      Số tiền còn lại cần thanh toán
+                    </div>
+                  </div>
+                  <div className="flex relative gap-1 items-center">
+                    <div className="relative text-sm font-semibold leading-5 text-orange-500">
+                      <div className="text-sm font-bold text-orange-500">0</div>
+                    </div>
+                    <div className="relative text-sm font-semibold leading-5 text-orange-500">
+                      <div className="text-sm font-bold text-orange-500">VNĐ</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex relative gap-4 justify-center items-center self-stretch p-0">
+          <div className="flex relative gap-4 items-center max-md:flex-col max-md:gap-3 max-md:w-full max-sm:flex-col max-sm:gap-3 max-sm:w-full">
+            <div className="flex relative gap-2 justify-center items-center px-6 py-3 h-12 bg-emerald-600 rounded-3xl max-md:flex-col max-md:gap-3 max-md:justify-center max-md:w-full max-sm:flex-col max-sm:gap-3 max-sm:px-5 max-sm:py-2.5 max-sm:w-full max-sm:h-11 max-sm:text-sm">
+              <div className="relative text-sm leading-5 text-white max-md:flex-col max-md:gap-3 max-md:justify-center max-md:w-full max-sm:flex-col max-sm:gap-3 max-sm:px-5 max-sm:py-2.5 max-sm:w-full max-sm:h-11 max-sm:text-sm">
+                <a className="text-sm text-white">Xác nhận đơn hàng</a>
+              </div>
+            </div>
+            <div className="flex relative gap-2 justify-center items-center px-6 py-3 h-12 bg-orange-500 rounded-3xl max-md:flex-col max-md:gap-3 max-md:justify-center max-md:w-full max-sm:flex-col max-sm:gap-3 max-sm:px-5 max-sm:py-2.5 max-sm:w-full max-sm:h-11 max-sm:text-sm">
+              <div className="relative text-sm leading-5 text-white max-md:flex-col max-md:gap-3 max-md:justify-center max-md:w-full max-sm:flex-col max-sm:gap-3 max-sm:px-5 max-sm:py-2.5 max-sm:w-full max-sm:h-11 max-sm:text-sm">
+                <a className="text-sm text-white">Chỉnh sửa thông tin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex relative gap-4 items-center self-stretch p-3 bg-indigo-50 rounded-xl max-sm:gap-3 max-sm:p-3">
+          <div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<svg id="1:1184" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="warning-icon" style="width: 60px; height: 60px; aspect-ratio: 1/1; position: relative"> <path d="M15.6805 44.0811L11.6328 51.9471H12.8955L18.7553 46.5699L15.6805 44.0811Z" fill="url(#paint0_linear_1_1184)"></path> <path d="M44.3213 44.0811L48.369 51.9471H47.1063L41.2461 46.5699L44.3213 44.0811Z" fill="url(#paint1_linear_1_1184)"></path> <path d="M45 45C53.2843 36.7157 53.2843 23.2843 45 15C36.7157 6.71574 23.2843 6.71573 15 15C6.71573 23.2843 6.71573 36.7157 15 45C23.2843 53.2843 36.7157 53.2843 45 45Z" fill="#4F46E5"></path> <path d="M47.4009 3.4123C46.8786 4.1675 47.0671 5.20323 47.8223 5.7255C48.5775 6.24778 49.6132 6.05928 50.1355 5.30409C50.6578 4.5489 50.4693 3.51316 49.7141 2.99089C48.9589 2.46822 47.9231 2.65711 47.4009 3.4123Z" fill="#C7D2FE"></path> <path d="M48.765 4.35893C52.8947 7.21561 54.0986 12.7233 51.6717 17.0099C51.4384 17.4221 50.8937 17.537 50.5043 17.2676L36.0728 7.28485C35.683 7.01551 35.5986 6.46523 35.9023 6.10144C39.0571 2.31827 44.6352 1.50225 48.765 4.35893Z" fill="#4F46E5"></path> <path d="M48.14 32.9035C49.7396 22.8873 42.9167 13.4708 32.9007 11.8713C22.8847 10.2718 13.4685 17.0949 11.8689 27.1111C10.2693 37.1273 17.0922 46.5437 27.1082 48.1433C37.1242 49.7428 46.5405 42.9197 48.14 32.9035Z" fill="white"></path> <path d="M30.0013 31.2021C29.6931 31.2021 29.3853 31.0844 29.1508 30.8487C28.683 30.3788 28.6842 29.6188 29.154 29.151L38.0262 20.3124C38.4961 19.8437 39.2561 19.8454 39.7243 20.3156C40.1921 20.7854 40.1905 21.5454 39.7211 22.0133L30.8485 30.8519C30.6144 31.0856 30.3078 31.2021 30.0013 31.2021Z" fill="url(#paint2_linear_1_1184)"></path> <path d="M30.0014 31.8003C29.5403 31.8003 29.0797 31.6242 28.7279 31.2728L22.5391 25.084C21.8359 24.3808 21.8359 23.2402 22.5391 22.5374C23.2427 21.8339 24.3824 21.8339 25.086 22.5374L31.2748 28.7263C31.978 29.4294 31.978 30.57 31.2748 31.2728C30.923 31.6242 30.4624 31.8003 30.0014 31.8003Z" fill="url(#paint3_linear_1_1184)"></path> <path d="M30.0018 15.1722C29.7809 15.1722 29.6016 14.9933 29.6016 14.7719V13.4308C29.6016 13.2095 29.7809 13.0306 30.0018 13.0306C30.2227 13.0306 30.402 13.2095 30.402 13.4308V14.7719C30.402 14.9933 30.2227 15.1722 30.0018 15.1722Z" fill="url(#paint4_linear_1_1184)"></path> <path d="M30.0018 46.9714C29.7809 46.9714 29.6016 46.7925 29.6016 46.5712V45.2297C29.6016 45.0084 29.7809 44.8295 30.0018 44.8295C30.2227 44.8295 30.402 45.0084 30.402 45.2297V46.5712C30.402 46.7925 30.2227 46.9714 30.0018 46.9714Z" fill="url(#paint5_linear_1_1184)"></path> <path d="M46.5733 30.4015H45.2322C45.0113 30.4015 44.832 30.2226 44.832 30.0013C44.832 29.78 45.0113 29.6011 45.2322 29.6011H46.5733C46.7942 29.6011 46.9735 29.78 46.9735 30.0013C46.9735 30.2226 46.7942 30.4015 46.5733 30.4015Z" fill="url(#paint6_linear_1_1184)"></path> <path d="M14.7726 30.4014H13.4315C13.2105 30.4014 13.0312 30.2225 13.0312 30.0012C13.0312 29.7798 13.2105 29.601 13.4315 29.601H14.7726C14.9935 29.601 15.1728 29.7798 15.1728 30.0012C15.1728 30.2225 14.9939 30.4014 14.7726 30.4014Z" fill="url(#paint7_linear_1_1184)"></path> <path d="M40.7675 19.6319C40.665 19.6319 40.5626 19.5927 40.4845 19.5146C40.3281 19.3582 40.3281 19.1052 40.4845 18.9487L41.4326 18.0007C41.5891 17.8442 41.8421 17.8442 41.9985 18.0007C42.155 18.1571 42.155 18.4101 41.9985 18.5666L41.0504 19.5146C40.9724 19.5927 40.8699 19.6319 40.7675 19.6319Z" fill="url(#paint8_linear_1_1184)"></path> <path d="M18.2831 42.1186C18.1807 42.1186 18.0782 42.0794 18.0002 42.0014C17.8437 41.8449 17.8437 41.592 18.0002 41.4355L18.9487 40.487C19.1051 40.3305 19.3581 40.3305 19.5146 40.487C19.671 40.6435 19.671 40.8964 19.5146 41.0529L18.5661 42.0014C18.488 42.0798 18.3856 42.1186 18.2831 42.1186Z" fill="url(#paint9_linear_1_1184)"></path> <path d="M41.7156 42.1186C41.6131 42.1186 41.5107 42.0794 41.4326 42.0014L40.4845 41.0529C40.3281 40.8964 40.3281 40.6435 40.4845 40.487C40.641 40.3305 40.894 40.3305 41.0504 40.487L41.9985 41.4355C42.155 41.592 42.155 41.8449 41.9985 42.0014C41.9205 42.0798 41.818 42.1186 41.7156 42.1186Z" fill="url(#paint10_linear_1_1184)"></path> <path d="M19.2316 19.6319C19.1292 19.6319 19.0267 19.5927 18.9487 19.5146L18.0002 18.5666C17.8437 18.4101 17.8437 18.1571 18.0002 18.0007C18.1567 17.8442 18.4096 17.8442 18.5661 18.0007L19.5146 18.9487C19.671 19.1052 19.671 19.3582 19.5146 19.5146C19.4365 19.5927 19.3341 19.6319 19.2316 19.6319Z" fill="url(#paint11_linear_1_1184)"></path> <path d="M12.6003 3.4123C13.1226 4.1675 12.9341 5.20323 12.1789 5.7255C11.4237 6.24778 10.388 6.05928 9.86571 5.30409C9.34344 4.5489 9.53194 3.51316 10.2871 2.99089C11.0423 2.46822 12.0781 2.65711 12.6003 3.4123Z" fill="#C7D2FE"></path> <path d="M11.2331 4.35893C7.10332 7.21561 5.89949 12.7233 8.32635 17.0099C8.55967 17.4221 9.10396 17.537 9.49376 17.2676L23.9252 7.28485C24.3151 7.01551 24.3995 6.46523 24.0957 6.10144C20.9413 2.31827 15.3628 1.50225 11.2331 4.35893Z" fill="#4F46E5"></path> <defs> <linearGradient id="paint0_linear_1_1184" x1="18.0355" y1="42.9118" x2="10.822" y2="44.3686" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint1_linear_1_1184" x1="47.6491" y1="42.9118" x2="40.4353" y2="44.3688" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint2_linear_1_1184" x1="38.9349" y1="18.2911" x2="27.6182" y2="20.8227" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint3_linear_1_1184" x1="30.8127" y1="20.5544" x2="20.9819" y2="22.7472" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint4_linear_1_1184" x1="30.3211" y1="12.7123" x2="29.4832" y2="12.7822" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint5_linear_1_1184" x1="30.3211" y1="44.5111" x2="29.4832" y2="44.5809" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint6_linear_1_1184" x1="46.7571" y1="29.4821" x2="45.0926" y2="30.4754" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint7_linear_1_1184" x1="14.9563" y1="29.482" x2="13.2918" y2="30.4753" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint8_linear_1_1184" x1="41.9392" y1="17.6234" x2="40.1833" y2="18.0151" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint9_linear_1_1184" x1="19.4552" y1="40.1096" x2="17.6988" y2="40.5014" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint10_linear_1_1184" x1="41.9392" y1="40.1096" x2="40.1832" y2="40.5012" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> <linearGradient id="paint11_linear_1_1184" x1="19.4552" y1="17.6234" x2="17.6989" y2="18.0152" gradientUnits="userSpaceOnUse"> <stop stop-color="#FF9A0E"></stop> <stop offset="1" stop-color="#FFCF0E"></stop> </linearGradient> </defs> </svg>',
+              }}
+            />
+          </div>
+          <div className="flex relative flex-col gap-2.5 justify-center items-start flex-[1_0_0] max-sm:gap-2">
+            <div className="relative self-stretch text-sm font-medium leading-5 text-red-700 max-sm:gap-2">
+              <div className="text-sm text-neutral-800">
+                Để đảm bảo giữ chỗ, Quý khách vui lòng thanh toán đơn hàng trong vòng
+              </div>
+              <div className="text-sm text-red-700">24 giờ</div>
+              <div className="text-sm text-neutral-800">kể từ khi nhận được email này.</div>
+            </div>
+            <div className="flex relative flex-col gap-4 items-start self-stretch max-sm:gap-2">
+              <div className="flex relative flex-col items-start self-stretch max-sm:gap-2">
+                <div className="relative self-stretch text-sm leading-5 text-neutral-800 max-sm:gap-2">
+                  <div className="text-sm text-neutral-800">
+                    Sau thời hạn trên, nếu chưa nhận được thanh toán, đơn hàng sẽ tạm huỷ để nhường
+                    suất cho khách hàng khác.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex relative gap-2.5 justify-center items-start self-stretch px-10 py-0">
+          <div className="relative text-sm font-semibold leading-5 text-center text-indigo-800 flex-[1_0_0]">
+            <div className="text-sm font-bold text-indigo-800">
+              VIETNAM TOURIST KÍNH CHÚC QUÝ KHÁCH HÀNG CÓ MỘT CHUYẾN ĐI THÚ VỊ VÀ BỔ ÍCH !
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex relative flex-col gap-6 items-center self-stretch p-6 bg-indigo-800 rounded-none max-sm:gap-5 max-sm:px-4 max-sm:py-5">
+        <div className="flex relative flex-col gap-4 items-center self-stretch">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/5ac2678b1d9e0ab46f638ff29ab81f302e8e865a?width=180"
+            alt="Logo"
+            className="relative aspect-[2/1] h-[45px] w-[90px]"
+          />
+          <div className="flex relative flex-col gap-2 items-center p-0">
+            <div className="flex relative gap-1 items-center">
+              <div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      '<svg id="1:1234" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="phone-icon" style="width: 14px; height: 14px; aspect-ratio: 1/1; position: relative"> <g clip-path="url(#clip0_1_1234)"> <path d="M7.58333 1.16663C8.97571 1.16663 10.3111 1.71975 11.2956 2.70432C12.2802 3.68888 12.8333 5.02424 12.8333 6.41663" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.58333 3.5C8.35688 3.5 9.09874 3.80729 9.64572 4.35427C10.1927 4.90125 10.5 5.64312 10.5 6.41667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8.06867 9.66463C8.18915 9.71995 8.32487 9.7326 8.45349 9.70047C8.58211 9.66834 8.69595 9.59336 8.77626 9.48788L8.98334 9.21663C9.09201 9.07173 9.23293 8.95413 9.39492 8.87313C9.55692 8.79213 9.73555 8.74996 9.91667 8.74996H11.6667C11.9761 8.74996 12.2728 8.87288 12.4916 9.09167C12.7104 9.31046 12.8333 9.60721 12.8333 9.91663V11.6666C12.8333 11.976 12.7104 12.2728 12.4916 12.4916C12.2728 12.7104 11.9761 12.8333 11.6667 12.8333C8.8819 12.8333 6.21118 11.727 4.24205 9.75791C2.27292 7.78878 1.16667 5.11807 1.16667 2.33329C1.16667 2.02387 1.28959 1.72713 1.50838 1.50833C1.72717 1.28954 2.02392 1.16663 2.33334 1.16663H4.08334C4.39276 1.16663 4.6895 1.28954 4.9083 1.50833C5.12709 1.72713 5.25001 2.02387 5.25001 2.33329V4.08329C5.25001 4.26441 5.20784 4.44304 5.12684 4.60504C5.04584 4.76704 4.92823 4.90795 4.78334 5.01663L4.51034 5.22138C4.40325 5.30315 4.32777 5.41947 4.29672 5.55058C4.26567 5.68169 4.28096 5.81951 4.34001 5.94063C5.13724 7.55988 6.44842 8.86942 8.06867 9.66463Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_1_1234"> <rect width="14" height="14" fill="white"></rect> </clipPath> </defs> </svg>',
+                  }}
+                />
+              </div>
+              <div className="relative text-xs leading-5 text-white">
+                <div className="text-xs text-white">Hotline:</div>
+              </div>
+              <div className="relative text-xs leading-5 text-white">
+                <div className="text-xs text-white">(028) 36360292-(028) 36360293</div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center">
+              <div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      '<svg id="1:1238" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="map-icon" style="width: 14px; height: 14px; aspect-ratio: 1/1; position: relative"> <path d="M11.6667 5.83329C11.6667 8.74588 8.43558 11.7792 7.35058 12.716C7.2495 12.792 7.12646 12.8331 7 12.8331C6.87353 12.8331 6.75049 12.792 6.64941 12.716C5.56441 11.7792 2.33333 8.74588 2.33333 5.83329C2.33333 4.59562 2.82499 3.40863 3.70016 2.53346C4.57533 1.65829 5.76232 1.16663 7 1.16663C8.23767 1.16663 9.42466 1.65829 10.2998 2.53346C11.175 3.40863 11.6667 4.59562 11.6667 5.83329Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7 7.58337C7.9665 7.58337 8.75 6.79987 8.75 5.83337C8.75 4.86688 7.9665 4.08337 7 4.08337C6.0335 4.08337 5.25 4.86688 5.25 5.83337C5.25 6.79987 6.0335 7.58337 7 7.58337Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>',
+                  }}
+                />
+              </div>
+              <div className="relative text-xs leading-5 text-white">
+                <div className="text-xs text-white">Trụ sở chính:</div>
+              </div>
+              <div className="flex relative gap-2.5 items-center p-0">
+                <div className="relative text-xs leading-5 text-white">
+                  <div className="text-xs text-white">
+                    208 Hoàng Văn Thụ, phường 4, quận Tân Bình
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex relative gap-1 items-center">
+              <div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      '<svg id="1:1243" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="link-icon" style="width: 14px; height: 14px; aspect-ratio: 1/1; position: relative"> <g clip-path="url(#clip0_1_1243)"> <path d="M5.83333 7.58335C6.08384 7.91826 6.40345 8.19538 6.77048 8.3959C7.13751 8.59643 7.54337 8.71567 7.96054 8.74555C8.37771 8.77542 8.79642 8.71523 9.18828 8.56906C9.58014 8.42288 9.93598 8.19414 10.2317 7.89835L11.9817 6.14835C12.513 5.59826 12.8069 4.86151 12.8003 4.09677C12.7936 3.33203 12.4869 2.60049 11.9461 2.05972C11.4054 1.51894 10.6738 1.2122 9.90908 1.20555C9.14434 1.19891 8.40758 1.49289 7.8575 2.02419L6.85416 3.02169" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8.16666 6.41672C7.91615 6.08181 7.59654 5.80469 7.22951 5.60417C6.86248 5.40364 6.45661 5.2844 6.03945 5.25452C5.62228 5.22465 5.20357 5.28484 4.81171 5.43101C4.41985 5.57719 4.06401 5.80593 3.76833 6.10172L2.01833 7.85172C1.48703 8.40181 1.19305 9.13856 1.1997 9.9033C1.20634 10.668 1.51308 11.3996 2.05386 11.9404C2.59463 12.4811 3.32617 12.7879 4.09091 12.7945C4.85565 12.8012 5.5924 12.5072 6.14249 11.9759L7.13999 10.9784" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_1_1243"> <rect width="14" height="14" fill="white"></rect> </clipPath> </defs> </svg>',
+                  }}
+                />
+              </div>
+              <div className="relative text-xs leading-5 text-white">
+                <div className="text-xs text-white">Website:</div>
+              </div>
+              <div className="flex relative gap-2.5 items-center p-0">
+                <div className="relative text-xs leading-5 text-white">
+                  <div className="text-xs text-white">vietnamtouristvn.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex relative flex-col justify-center items-center self-stretch p-0">
+            <div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html:
+                    '<svg id="1:1248" width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-icons" style="display: flex; align-items: center; gap: 10px; position: relative; width: 150px; height: 30px"> <g clip-path="url(#clip0_1_1248)"> <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="white"></path> <path d="M21.6347 9.42325C20.3068 9.06055 14.9953 9.06055 14.9953 9.06055C14.9953 9.06055 9.68385 9.06055 8.35598 9.41096C7.64287 9.60768 7.05884 10.1917 6.86211 10.9171C6.5117 12.245 6.51172 14.9991 6.51172 14.9991C6.51172 14.9991 6.5117 17.7655 6.86211 19.081C7.05884 19.8064 7.63057 20.3782 8.35598 20.5749C9.69614 20.9376 14.9953 20.9376 14.9953 20.9376C14.9953 20.9376 20.3068 20.9376 21.6347 20.5872C22.3601 20.3905 22.9318 19.8187 23.1285 19.0933C23.4789 17.7655 23.4789 15.0114 23.4789 15.0114C23.4789 15.0114 23.4912 12.245 23.1285 10.9171C22.9379 10.1917 22.3601 9.61997 21.6347 9.42325Z" fill="#3730A3"></path> <path d="M13.3281 17.5394L17.7421 14.9943L13.3281 12.4492V17.5394Z" fill="white"></path> <path d="M55 0C63.2856 0 70 6.7144 70 15C70 23.2856 63.2856 30 55 30C46.7144 29.9939 40 23.2795 40 15C40 6.7144 46.7144 0 55 0Z" fill="white"></path> <path d="M56.8234 10.3227H58.7567V7.46875H56.4858V7.48102C53.7301 7.57922 53.1716 9.12587 53.1164 10.7523H53.1102V12.1762H51.2383V14.9749H53.1102V22.4688H55.9335V14.9749H58.2473L58.6953 12.1762H55.9335V11.3169C55.9396 10.7646 56.3017 10.3227 56.8234 10.3227Z" fill="#3730A3"></path> <path d="M95 30C103.284 30 110 23.2843 110 15C110 6.71573 103.284 0 95 0C86.7157 0 80 6.71573 80 15C80 23.2843 86.7157 30 95 30Z" fill="white"></path> <path d="M95.0017 6.08678C91.3501 6.08678 87.8829 5.76096 86.5611 9.16055C86.014 10.5622 86.0939 12.388 86.0939 15.0007C86.0939 17.2937 86.0202 19.4454 86.5611 20.8347C87.8829 24.2343 91.3808 23.9085 95.0017 23.9085C98.4997 23.9085 102.102 24.2712 103.442 20.8347C103.989 19.4146 103.91 17.6196 103.91 15.0007C103.91 11.5212 104.1 9.27121 102.416 7.58678C100.7 5.87162 98.389 6.08678 95.0017 6.08678ZM94.2025 7.69129C101.819 7.67899 102.791 6.83064 102.256 18.597C102.065 22.7589 98.8993 22.2978 95.0017 22.2978C87.9013 22.2978 87.6984 22.095 87.6984 14.9946C87.6984 7.80809 88.2579 7.69744 94.2025 7.69129ZM99.7538 9.17285C99.1636 9.17285 98.6841 9.65236 98.6841 10.2425C98.6841 10.8327 99.1636 11.3122 99.7538 11.3122C100.344 11.3122 100.823 10.8327 100.823 10.2425C100.823 9.65236 100.344 9.17285 99.7538 9.17285ZM95.0017 10.4208C92.4751 10.4208 90.4279 12.4679 90.4279 14.9946C90.4279 17.5212 92.4751 19.5683 95.0017 19.5683C97.5284 19.5683 99.5755 17.5212 99.5755 14.9946C99.5755 12.4679 97.5284 10.4208 95.0017 10.4208ZM95.0017 12.0253C98.93 12.0253 98.9361 17.9638 95.0017 17.9638C91.0734 17.97 91.0673 12.0253 95.0017 12.0253Z" fill="#3730A3"></path> <path d="M135 0C126.714 0 120 6.7201 120 15C120 23.2799 126.72 30 135 30C143.286 30 150 23.2799 150 15C150 6.7201 143.286 0 135 0Z" fill="white"></path> <path d="M137.805 5.83203C137.811 6.11562 137.835 6.39311 137.891 6.6582C137.891 6.67451 137.896 6.69072 137.902 6.70703H137.908C138.13 7.76116 138.734 8.67975 139.567 9.30859L139.573 9.31445L139.575 9.31641C140.315 9.87099 141.233 10.1982 142.226 10.1982H142.232V10.9932L142.231 10.9922V13.0322C141.257 13.0322 140.307 12.8417 139.413 12.4658C138.834 12.2254 138.297 11.9103 137.81 11.5342L137.822 17.9033C137.816 19.3397 137.248 20.684 136.219 21.7012C135.387 22.5271 134.326 23.051 133.18 23.2236C132.915 23.2668 132.637 23.2852 132.36 23.2852C131.133 23.2851 129.967 22.8847 129.018 22.1572C128.993 22.1388 128.969 22.1141 128.945 22.0957C128.94 22.09 128.935 22.0838 128.931 22.0781C128.785 21.9568 128.64 21.8349 128.5 21.6953C127.384 20.5979 126.811 19.106 126.909 17.54C126.983 16.344 127.465 15.2094 128.26 14.3154C129.314 13.132 130.787 12.4786 132.365 12.4785C132.643 12.4785 132.914 12.4969 133.186 12.54V13.3604C131.626 13.3789 130.177 14.032 129.135 15.1973C128.333 16.0912 127.859 17.2258 127.785 18.4219C127.73 19.3422 127.907 20.2361 128.287 21.0391C127.91 20.236 127.736 19.3443 127.791 18.4268C127.865 17.2309 128.347 16.097 129.142 15.2031C130.184 14.0317 131.639 13.3837 133.193 13.3652V15.4365C132.934 15.3564 132.662 15.3076 132.378 15.3076C130.936 15.3077 129.77 16.4793 129.795 17.9219C129.808 18.8404 130.307 19.6421 131.04 20.0859C131.043 20.0902 131.045 20.0944 131.048 20.0986L131.18 20.1729C131.494 20.3383 131.847 20.4403 132.225 20.4619C132.558 20.4804 132.885 20.4316 133.181 20.333C134.21 19.9939 134.95 19.0253 134.95 17.8848L134.956 13.6191V5.83203H137.805ZM135.832 6.71387V14.4941L135.825 18.7607C135.825 19.9012 135.085 20.8689 134.056 21.208C133.834 21.2819 133.595 21.3272 133.349 21.3379C133.597 21.3276 133.838 21.2825 134.062 21.208C135.091 20.8689 135.831 19.9003 135.831 18.7598L135.837 14.4941V6.71387H135.832Z" fill="#3730A3"></path> </g> <defs> <clipPath id="clip0_1_1248"> <rect width="150" height="30" fill="white"></rect> </clipPath> </defs> </svg>',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
