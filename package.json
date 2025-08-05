@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "build:email": "tailwindcss -c tailwind.config.ts -i ./src/styles/globals.css -o dist/output.css --minify",
+    "build": "npm run build:email && next build",
     "start": "next start",
     "lint": "next lint"
   },
