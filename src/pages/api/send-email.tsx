@@ -13,14 +13,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const formData = req.body;
 
   try {
-    // 1️⃣ Đọc CSS Tailwind đã build, nhưng chỉ CSS cần thiết
-    const cssPath = path.join(process.cwd(), 'dist/output.css');
-    if (!fs.existsSync(cssPath)) return res.status(500).json({ error: 'Không tìm thấy CSS' });
+    // 1️⃣ Đọc CSS riêng cho email (build từ email.css)
+    const cssPath = path.join(process.cwd(), 'dist/email.css');
+    if (!fs.existsSync(cssPath)) return res.status(500).json({ error: 'Không tìm thấy CSS email' });
     const tailwindCss = fs.readFileSync(cssPath, 'utf8');
 
     // 2️⃣ Render React component -> HTML string
     const componentHtml = ReactDOMServer.renderToStaticMarkup(<VerifyEmail data={formData} />);
 
+    // 3️⃣ Ghép CSS vào HTML
     const htmlWithCss = `
       <html>
         <head>
@@ -32,10 +33,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       </html>
     `;
 
-    // 3️⃣ Inline CSS tất cả class/selector để Gmail hiểu
+    // 4️⃣ Inline CSS để Gmail hiểu
     const finalHtml = juice(htmlWithCss);
 
-    // 4️⃣ Gửi email
+    // 5️⃣ Gửi email
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
